@@ -3,7 +3,7 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-^1::      ; Interviewer
+#1::      ; Interviewer
 person_str := "Interviewer:"
 at := " " . get_audio_time() . " "
 Send ^b
@@ -12,7 +12,7 @@ Send ^b
 Send %at%
 return
 
-^space::  ; Write a note
+#\::  ; Write a note
 at := get_audio_time()
 Send %at%
 Send {Left}{Space}
