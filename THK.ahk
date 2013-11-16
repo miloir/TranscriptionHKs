@@ -14,9 +14,9 @@ Send ^b
 Send %at%
 return
 
-#\::  ; Write a note
+#s::  ; Write timestamped note
 at := get_audio_time()
-InputBox, audio_note, Audio Note, Type an audio note that will be inserted into a timestamp.,,,130
+InputBox, audio_note, Timestamped Audio Note, Type an audio note that will be inserted into a timestamp.,,,130
 Send (%at%
 if audio_note
 {
@@ -25,6 +25,15 @@ if audio_note
   Send %audio_note%
   Send ^i
 }
+Send )
+return
+
+#a::  ; Write untimed note
+InputBox, audio_note, Audio Note, Type an audio note.,,,130
+Send (
+Send ^i
+Send %audio_note%
+Send ^i
 Send )
 return
 
